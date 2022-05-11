@@ -12,7 +12,7 @@ export type CollapseDrawerContextProps = {
 const initialState: CollapseDrawerContextProps = {
   collapseClick: false,
   collapseHover: false,
-  onToggleCollapse: () => {}
+  onToggleCollapse: () => {},
 };
 
 const CollapseDrawerContext = createContext(initialState);
@@ -26,14 +26,14 @@ function CollapseDrawerProvider({ children }: CollapseDrawerProviderProps) {
   const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
   const [collapse, setCollapse] = useState({
     click: false,
-    hover: false
+    hover: false,
   });
 
   useEffect(() => {
     if (isMobile) {
       setCollapse({
         click: false,
-        hover: false
+        hover: false,
       });
     }
   }, [isMobile]);
@@ -48,7 +48,7 @@ function CollapseDrawerProvider({ children }: CollapseDrawerProviderProps) {
         isCollapse: collapse.click && !collapse.hover,
         collapseClick: collapse.click,
         collapseHover: collapse.hover,
-        onToggleCollapse: handleToggleCollapse
+        onToggleCollapse: handleToggleCollapse,
       }}
     >
       {children}

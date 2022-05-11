@@ -3,7 +3,15 @@ import { useEffect } from "react";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 import { styled } from "@mui/material/styles";
-import { Box, Stack, Avatar, Drawer, Typography, BottomNavigation, BottomNavigationAction } from "@mui/material";
+import {
+  Box,
+  Stack,
+  Avatar,
+  Drawer,
+  Typography,
+  BottomNavigation,
+  BottomNavigationAction,
+} from "@mui/material";
 import { useCollapseDrawer } from "../../hooks/useCollapseDrawer";
 import { Logo } from "../../components/Logo";
 import { Scrollbar } from "../../components/Scrollbar";
@@ -18,9 +26,9 @@ const RootStyle = styled("div")(({ theme }) => ({
   [theme.breakpoints.up("lg")]: {
     flexShrink: 0,
     transition: theme.transitions.create("width", {
-      duration: theme.transitions.duration.complex
-    })
-  }
+      duration: theme.transitions.duration.complex,
+    }),
+  },
 }));
 
 const AccountStyle = styled("div")(({ theme }) => ({
@@ -28,7 +36,7 @@ const AccountStyle = styled("div")(({ theme }) => ({
   alignItems: "center",
   padding: theme.spacing(2, 2.5),
   borderRadius: theme.shape.borderRadiusSm,
-  backgroundColor: theme.palette.grey[500_12]
+  backgroundColor: theme.palette.grey[500_12],
 }));
 
 type DashboardSidebarProps = {
@@ -36,7 +44,10 @@ type DashboardSidebarProps = {
   onCloseSidebar: VoidFunction;
 };
 
-export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }: DashboardSidebarProps) {
+export default function DashboardSidebar({
+  isOpenSidebar,
+  onCloseSidebar,
+}: DashboardSidebarProps) {
   const { pathname } = useRouter();
   const { isCollapse } = useCollapseDrawer();
 
@@ -54,8 +65,8 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }: Dash
         "& .simplebar-content": {
           height: "100%",
           display: "flex",
-          flexDirection: "column"
-        }
+          flexDirection: "column",
+        },
       }}
     >
       <Stack
@@ -65,11 +76,15 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }: Dash
           height: "100%",
           px: 2.5,
           pt: 3,
-          pb: 2
+          pb: 2,
         }}
       >
         <Box>
-          <Stack direction="row" alignItems="center" justifyContent="space-between">
+          <Stack
+            direction="row"
+            alignItems="center"
+            justifyContent="space-between"
+          >
             <NextLink href="/">
               <Logo />
             </NextLink>
@@ -80,7 +95,10 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }: Dash
 
         <NextLink href="#">
           <AccountStyle>
-            <Avatar alt="My Avatar" src="https://thumbs.dreamstime.com/z/vector-illustration-avatar-dummy-sign-collection-avatar-image-stock-symbol-web-vector-design-avatar-dummy-137160097.jpg" />
+            <Avatar
+              alt="My Avatar"
+              src="https://thumbs.dreamstime.com/z/vector-illustration-avatar-dummy-sign-collection-avatar-image-stock-symbol-web-vector-design-avatar-dummy-137160097.jpg"
+            />
             <Box sx={{ ml: 2 }}>
               <Typography variant="subtitle2" sx={{ color: "text.primary" }}>
                 Sil
@@ -99,12 +117,15 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }: Dash
     <RootStyle
       sx={{
         width: {
-          lg: DRAWER_WIDTH
-        }
+          lg: DRAWER_WIDTH,
+        },
       }}
     >
       <MHidden width="lgUp">
-        <BottomNavigation showLabels sx={{ position: "fixed", bottom: 0, width: "100%" }}>
+        <BottomNavigation
+          showLabels
+          sx={{ position: "fixed", bottom: 0, width: "100%" }}
+        >
           <BottomNavigationAction label="Recents" />
           <BottomNavigationAction label="Favorites" />
           <BottomNavigationAction label="Nearby" />
@@ -116,7 +137,7 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }: Dash
           open={isOpenSidebar}
           onClose={onCloseSidebar}
           PaperProps={{
-            sx: { width: DRAWER_WIDTH, height: "100%" }
+            sx: { width: DRAWER_WIDTH, height: "100%" },
           }}
         >
           {renderContent}
@@ -131,8 +152,8 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }: Dash
             sx: {
               height: "100%",
               width: DRAWER_WIDTH,
-              bgcolor: "background.default"
-            }
+              bgcolor: "background.default",
+            },
           }}
         >
           {renderContent}

@@ -6,9 +6,9 @@ export default function Breadcrumbs(theme: Theme) {
       styleOverrides: {
         separator: {
           marginLeft: theme.spacing(2),
-          marginRight: theme.spacing(2)
-        }
-      }
-    }
+          marginRight: theme.spacing(2),
+        },
+      },
+    },
   };
 }

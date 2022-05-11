@@ -9,7 +9,7 @@ const APP_BAR_DESKTOP = 92;
 const RootStyle = styled("div")(({ theme }) => ({
   display: "flex",
   minHeight: "100%",
-  overflow: "hidden"
+  overflow: "hidden",
 }));
 
 const MainStyle = styled("div")(({ theme }) => ({
@@ -21,8 +21,8 @@ const MainStyle = styled("div")(({ theme }) => ({
   [theme.breakpoints.up("lg")]: {
     paddingTop: APP_BAR_DESKTOP + 32,
     paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(2)
-  }
+    paddingRight: theme.spacing(2),
+  },
 }));
 
 type DashboardLayoutProps = {
@@ -35,7 +35,10 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
     <RootStyle>
       <DashboardNavbar onOpenSidebar={() => setOpen(true)} />
-      <DashboardSidebar isOpenSidebar={open} onCloseSidebar={() => setOpen(false)} />
+      <DashboardSidebar
+        isOpenSidebar={open}
+        onCloseSidebar={() => setOpen(false)}
+      />
       <MainStyle>{children}</MainStyle>
     </RootStyle>
   );

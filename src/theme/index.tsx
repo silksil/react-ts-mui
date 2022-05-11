@@ -19,14 +19,18 @@ export default function ThemeConfig({ children }: ThemeConfigProps) {
 
   const themeOptions: ThemeOptions = useMemo(
     () => ({
-      palette: isLight ? { ...palette.light, mode: "light" } : { ...palette.dark, mode: "dark" },
+      palette: isLight
+        ? { ...palette.light, mode: "light" }
+        : { ...palette.dark, mode: "dark" },
       shape,
       // icons: { ...icons },
       typography,
       breakpoints,
       shadows: isLight ? shadows.light : shadows.dark,
-      customShadows: isLight ? { ...customShadows.light } : { ...customShadows.dark },
-      setThemeMode
+      customShadows: isLight
+        ? { ...customShadows.light }
+        : { ...customShadows.dark },
+      setThemeMode,
     }),
     [isLight]
   );

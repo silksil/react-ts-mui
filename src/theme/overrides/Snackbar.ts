@@ -4,8 +4,8 @@ export default function Snackbar(theme: Theme) {
   return {
     MuiSnackbarContent: {
       styleOverrides: {
-        root: {}
-      }
-    }
+        root: {},
+      },
+    },
   };
 }

@@ -9,7 +9,7 @@ const RootStyle = styled(Page)(({ theme }) => ({
   minHeight: "100%",
   alignItems: "center",
   paddingTop: theme.spacing(15),
-  paddingBottom: theme.spacing(10)
+  paddingBottom: theme.spacing(10),
 }));
 
 export default function PageNotFound() {
@@ -22,7 +22,10 @@ export default function PageNotFound() {
               Sorry, page not found!
             </Typography>
 
-            <Typography sx={{ color: "text.secondary", mb: 3 }}>Sorry, we couldn’t find the page you’re looking for. Perhaps you’ve mistyped the URL? Be sure to check your spelling.</Typography>
+            <Typography sx={{ color: "text.secondary", mb: 3 }}>
+              Sorry, we couldn’t find the page you’re looking for. Perhaps
+              you’ve mistyped the URL? Be sure to check your spelling.
+            </Typography>
             <NextLink href="/">
               <Button size="large" variant="contained">
                 Go to Home

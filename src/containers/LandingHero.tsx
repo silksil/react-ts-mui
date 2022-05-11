@@ -5,20 +5,22 @@ import { varFadeInRight } from "../components/animate";
 
 const RootStyle = styled(motion.div)(() => ({
   position: "relative",
-  height: "80vh"
+  height: "80vh",
 }));
 
-const ContentStyle = styled((props) => <Stack spacing={5} {...props} />)(({ theme }) => ({
-  margin: "auto",
-  textAlign: "center",
-  position: "relative",
-  paddingTop: theme.spacing(15),
-  paddingBottom: theme.spacing(15),
-  [theme.breakpoints.up("md")]: {
-    margin: "unset",
-    textAlign: "left"
-  }
-}));
+const ContentStyle = styled((props) => <Stack spacing={5} {...props} />)(
+  ({ theme }) => ({
+    margin: "auto",
+    textAlign: "center",
+    position: "relative",
+    paddingTop: theme.spacing(15),
+    paddingBottom: theme.spacing(15),
+    [theme.breakpoints.up("md")]: {
+      margin: "unset",
+      textAlign: "left",
+    },
+  })
+);
 
 export function LandingHero() {
   return (

@@ -4,20 +4,20 @@ import fileFill from "@iconify/icons-eva/file-fill";
 
 const ICON_SIZE = {
   width: 22,
-  height: 22
+  height: 22,
 };
 
 const menuConfig = [
   {
     title: "Home",
     path: "/",
-    icon: <Icon icon={homeFill} {...ICON_SIZE} />
+    icon: <Icon icon={homeFill} {...ICON_SIZE} />,
   },
   {
     title: "Dashboard",
     path: "/dashboard",
-    icon: <Icon icon={fileFill} {...ICON_SIZE} />
-  }
+    icon: <Icon icon={fileFill} {...ICON_SIZE} />,
+  },
 ];
 
 export default menuConfig;

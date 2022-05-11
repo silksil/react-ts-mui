@@ -6,7 +6,12 @@
   "scripts": {
     "dev": "next dev -p 8222",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "prettier --check .",
+    "format": "prettier --write ."
+  },
+  "husky": {
+    "hooks": {}
   },
   "dependencies": {
     "@emotion/cache": "^11.4.0",
@@ -38,6 +43,8 @@
     "@types/lodash": "^4.14.173",
     "@types/nprogress": "^0.2.0",
     "@types/react": "^17.0.21",
-    "@types/react-scroll": "^1.8.3"
+    "@types/react-scroll": "^1.8.3",
+    "husky": "^8.0.1",
+    "prettier": "^2.6.2"
   }
 }

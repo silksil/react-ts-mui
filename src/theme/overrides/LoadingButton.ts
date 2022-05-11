@@ -7,14 +7,14 @@ export default function LoadingButton(theme: Theme) {
         root: {
           "&.MuiButton-text": {
             "& .MuiLoadingButton-startIconPendingStart": {
-              marginLeft: 0
+              marginLeft: 0,
             },
             "& .MuiLoadingButton-endIconPendingEnd": {
-              marginRight: 0
-            }
-          }
-        }
-      }
-    }
+              marginRight: 0,
+            },
+          },
+        },
+      },
+    },
   };
 }

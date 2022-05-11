@@ -8,10 +8,10 @@ const sidebarConfig = [
       {
         title: "Dashboard",
         path: "/dashboard",
-        icon: <Icon icon={starFill} />
-      }
-    ]
-  }
+        icon: <Icon icon={starFill} />,
+      },
+    ],
+  },
 ];
 
 export default sidebarConfig;

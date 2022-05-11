@@ -7,13 +7,15 @@ interface PageProps extends BoxProps {
   title?: string;
 }
 
-const Page = forwardRef<HTMLDivElement, PageProps>(({ children, title = "", ...other }, ref) => (
-  <Box ref={ref} {...other}>
-    <Head>
-      <title>{title}</title>
-    </Head>
-    {children}
-  </Box>
-));
+const Page = forwardRef<HTMLDivElement, PageProps>(
+  ({ children, title = "", ...other }, ref) => (
+    <Box ref={ref} {...other}>
+      <Head>
+        <title>{title}</title>
+      </Head>
+      {children}
+    </Box>
+  )
+);
 
 export { Page };

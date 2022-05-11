@@ -17,12 +17,12 @@ const LinkStyle = styled(Link)<RouterLinkProps>(({ theme }) => ({
   color: theme.palette.text.primary,
   marginRight: theme.spacing(5),
   transition: theme.transitions.create("opacity", {
-    duration: theme.transitions.duration.shortest
+    duration: theme.transitions.duration.shortest,
   }),
   "&:hover": {
     opacity: 0.48,
-    textDecoration: "none"
-  }
+    textDecoration: "none",
+  },
 }));
 
 type MenuDesktopItemProps = {
@@ -38,7 +38,7 @@ function MenuDesktopItem({ item, pathname }: MenuDesktopItemProps) {
     <NextLink key={title} href={path} passHref>
       <LinkStyle
         sx={{
-          ...(isActive && { color: "primary.main" })
+          ...(isActive && { color: "primary.main" }),
         }}
       >
         {title}

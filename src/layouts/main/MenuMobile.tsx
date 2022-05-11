@@ -4,7 +4,15 @@ import menu2Fill from "@iconify/icons-eva/menu-2-fill";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 import { alpha, styled } from "@mui/material/styles";
-import { Box, List, Drawer, ListItemText, ListItemIcon, ListItemButton, useTheme } from "@mui/material";
+import {
+  Box,
+  List,
+  Drawer,
+  ListItemText,
+  ListItemIcon,
+  ListItemButton,
+  useTheme,
+} from "@mui/material";
 import { Logo } from "../../components/Logo";
 import { Scrollbar } from "../../components/Scrollbar";
 import { MenuProps, MenuItemProps } from "./MainNavbar";
@@ -15,7 +23,7 @@ const ListItemStyle = styled(ListItemButton)(({ theme }) => ({
   height: 48,
   paddingLeft: theme.spacing(2),
   paddingRight: theme.spacing(2),
-  color: theme.palette.text.secondary
+  color: theme.palette.text.secondary,
 }));
 
 type MenuMobileItemProps = {
@@ -26,7 +34,10 @@ type MenuMobileItemProps = {
 function MenuMobileItem({ item, isActive }: MenuMobileItemProps) {
   const { title, path, icon } = item;
   const theme = useTheme();
-  const bgcolor = alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity);
+  const bgcolor = alpha(
+    theme.palette.primary.main,
+    theme.palette.action.selectedOpacity
+  );
 
   return (
     <NextLink key={title} href={path}>
@@ -34,8 +45,8 @@ function MenuMobileItem({ item, isActive }: MenuMobileItemProps) {
         sx={{
           ...(isActive && {
             color: "primary.main",
-            bgcolor
-          })
+            bgcolor,
+          }),
         }}
       >
         <ListItemIcon>{icon}</ListItemIcon>
@@ -69,13 +80,17 @@ export default function MenuMobile({ navConfig }: MenuProps) {
       <IconButton
         onClick={handleDrawerOpen}
         sx={{
-          ml: 1
+          ml: 1,
         }}
       >
         <Icon icon={menu2Fill} />
       </IconButton>
 
-      <Drawer open={drawerOpen} onClose={handleDrawerClose} PaperProps={{ sx: { pb: 5, width: 260 } }}>
+      <Drawer
+        open={drawerOpen}
+        onClose={handleDrawerClose}
+        PaperProps={{ sx: { pb: 5, width: 260 } }}
+      >
         <Scrollbar>
           <Box sx={{ display: "inline-flex" }}>
             <NextLink href="/">
@@ -85,7 +100,11 @@ export default function MenuMobile({ navConfig }: MenuProps) {
 
           <List disablePadding>
             {navConfig.map((link) => (
-              <MenuMobileItem key={link.title} item={link} isActive={pathname === link.path} />
+              <MenuMobileItem
+                key={link.title}
+                item={link}
+                isActive={pathname === link.path}
+              />
             ))}
           </List>
         </Scrollbar>

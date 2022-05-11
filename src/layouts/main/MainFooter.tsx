@@ -8,7 +8,7 @@ export function MainFooter() {
       sx={{
         py: 5,
         textAlign: "center",
-        position: "relative"
+        position: "relative",
       }}
     >
       <Container maxWidth="lg">

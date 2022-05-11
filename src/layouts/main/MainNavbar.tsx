@@ -13,8 +13,8 @@ const APP_BAR_DESKTOP = 88;
 const ToolbarStyle = styled(Toolbar)(({ theme }) => ({
   height: APP_BAR_MOBILE,
   [theme.breakpoints.up("md")]: {
-    height: APP_BAR_DESKTOP
-  }
+    height: APP_BAR_DESKTOP,
+  },
 }));
 
 export type MenuItemProps = {
@@ -36,7 +36,7 @@ export default function MainNavbar() {
           sx={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "space-between"
+            justifyContent: "space-between",
           }}
         >
           <NextLink href="/">

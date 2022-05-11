@@ -5,12 +5,12 @@ export default function Select(theme: Theme) {
   return {
     MuiSelect: {
       defaultProps: {
-        IconComponent: ExpandMoreRoundedIcon
+        IconComponent: ExpandMoreRoundedIcon,
       },
 
       styleOverrides: {
-        root: {}
-      }
-    }
+        root: {},
+      },
+    },
   };
 }
